@@ -3,14 +3,15 @@ from transformers import pipeline
 import os
 from dotenv import load_dotenv
 
+# Load environment variables from .env file
 load_dotenv()
 # Set your Hugging Face API token
 
 HF_API_TOKEN = os.environ["HF_API_TOKEN"] 
 
 # Page title
-st.set_page_config(page_title='🦜🔗 Text Summarization App')
-st.title('🦜🔗 Text Summarization App')
+st.set_page_config(page_title=' Summarization App')
+st.title('Summarization App')
 
 # Text input
 txt_input = st.text_area('Enter your text', '', height=200)
@@ -65,7 +66,7 @@ result = []
 with st.form('summarize_form', clear_on_submit=True):
     submitted = st.form_submit_button('Submit')
     if submitted :
-        with st.spinner('Calculating...'):
+        with st.spinner('Generating Summary...'):
             response = generate_response(txt_input)
             result.append(response)
 
