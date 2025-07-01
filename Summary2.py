@@ -52,13 +52,13 @@ def generate_response(txt):
         summaries = []
         for chunk in chunks:
             if len(chunk) > 100:  # Only summarize substantial chunks
-                summary = summarizer(chunk, max_length=130, min_length=30, do_sample=False)
+                summary = summarizer(chunk, max_length=430, min_length=50, do_sample=False)
                 summaries.append(summary[0]['summary_text'])
         
         return " ".join(summaries)
     else:
         # Summarize directly for shorter texts
-        summary = summarizer(txt, max_length=130, min_length=30, do_sample=False)
+        summary = summarizer(txt, max_length=230, min_length=50, do_sample=False)
         return summary[0]['summary_text']
 
 # Form to accept user's text input for summarization
