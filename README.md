@@ -17,8 +17,11 @@ A **Streamlit-based Text Summarization App** powered by Hugging Face's Transform
 
 ## 📂 File Structure
 📁 Summarizer-App/
+
 ├── Summary2.py # Main Streamlit application
+
 ├── .env # Environment file to store Hugging Face API token
+
 └── README.md # Project documentation (this file)
 
 ---
