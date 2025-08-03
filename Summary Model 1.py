@@ -19,8 +19,8 @@ HF_API_TOKEN = os.environ["HF_API_TOKEN"]
 # STREAMLIT UI SETUP
 # ======================
 # Page title
-st.set_page_config(page_title='Summarization App', layout='wide')
-st.title('📝 Summarization App')
+st.set_page_config(page_title='Summarization Model', layout='wide')
+st.title('📝 Text Summarization Application')
 st.markdown("""
     This app uses Facebook's BART-large-CNN model to generate concise summaries of your text.
     Paste your content below and click 'Submit' to get started.
