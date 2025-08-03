@@ -1,7 +1,8 @@
 
 # Text Summarization 
 
-![App Screenshot](https://via.placeholder.com/800x400?text=Text+Summarization+Pro+Screenshot)
+<img width="2873" height="1526" alt="image" src="https://github.com/user-attachments/assets/81e08a2e-8b2a-484a-889c-69969efe2100" />
+
 
 An advanced NLP-powered text summarization application using Hugging Face's transformer models. This tool helps convert lengthy documents into concise, meaningful summaries with customizable output length.
 
@@ -83,7 +84,7 @@ graph TD
         I2 --> J2[Export Options]
     end
 
-## Results
+
   
     
     
