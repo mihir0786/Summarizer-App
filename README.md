@@ -61,3 +61,93 @@ Pinker is the Johnstone Professor of Psychology at Harvard University and the au
 
 ## Output :
 The thought of a loved one can turn our wits upside down. We may become morose, obsessive, even violent. Lovesickness has been blamed on the moon, on the devil. But might there be a method to this amorous madness? In 1896 a Kwakiutl Indian in southern Alaska wrote the lament "Fire runs through my body--the pain of loving you" Similar outpourings of passion can be found all over the world from those with broken hearts. Romantic passion taps the same dopamine system that is engaged by other obsessive drives. People shop for the most desirable person who will accept them. Most marriages pair a bride and a groom of roughly equal desirability. But we also know this isn't the whole picture. Most daters find themselves with a match who ought to be perfect but with whom for some reason the chemistry isn't there. The ideal match is hard to find, and you may die single if you insist on waiting for such a mate to show up. So you choose to set up house with the best person you have found so far. Your mate has gone through the same reasoning, which leaves you both vulnerable. Don't accept a partner who wanted you for rational reasons to begin with. Look for someone who is emotionally committed to you because you are you. Social life is a series of promises, threats and bargains. In those games it sometimes pays to sacrifice your self-interest and control. A desperate lover in danger of being abandoned may resort to threatening his wife or girlfriend. Threats, no less than promises, must be backed up by signs of commitment. buyer who makes an unrecoverable deposit guarantees that her promise to buy the house is credible. The writer is a professor of English at U.S. University and the author of several books on language and human nature. He is also the editor of The Stuff of Thought: Language as a Window into Human Nature. For more, go to www.thestuffofthought.com.
+
+
+# Text Summarization Pro
+
+![App Screenshot](https://via.placeholder.com/800x400?text=Text+Summarization+Pro+Screenshot)
+
+An advanced NLP-powered text summarization application using Hugging Face's transformer models. This tool helps convert lengthy documents into concise, meaningful summaries with customizable output length.
+
+## Table of Contents
+- [Model Comparison](#model-comparison)
+- [Key Improvements](#key-improvements)
+- [Architecture](#architecture)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [License](#license)
+
+## Model Comparison
+
+| Feature                | Model 1 (BART)                          | Model 2 (FLAN-T5)                       |
+|------------------------|----------------------------------------|----------------------------------------|
+| **Base Model**         | facebook/bart-large-cnn                | google/flan-t5-large                   |
+| **Task Type**          | summarization                          | text2text-generation                   |
+| **Chunking Strategy**  | Word-based splitting                  | Paragraph-preserving smart chunking    |
+| **Output Structure**   | Plain summary                         | Sectioned summary (Key Points, Details, Conclusions) |
+| **UI Features**        | Basic input/output                    | Real-time stats, export options, progress tracking |
+| **Error Handling**     | Basic                                 | Comprehensive with logging             |
+| **Customization**      | Fixed summary length                  | 3-level length control                 |
+| **Performance**        | Good for medium texts                 | Better for very long documents         |
+
+## Key Improvements
+
+From Model 1 to Model 2, we implemented:
+
+1. **Enhanced Chunking Algorithm**:
+   - Added paragraph-aware splitting
+   - Fallback to word-based chunking when needed
+   - Better context preservation
+
+2. **Improved User Experience**:
+   - Real-time text statistics
+   - Progress indicators
+   - Export options (TXT file, clipboard)
+   - Session state management
+
+3. **Advanced Features**:
+   - Structured summary output
+   - Multiple length presets
+   - Comprehensive error logging
+   - Processing time tracking
+
+4. **Technical Upgrades**:
+   - Better prompt engineering
+   - Dynamic length adjustment per chunk
+   - Caching improvements
+   - Device management (CPU/GPU)
+
+## Architecture
+
+### Comparative Flowchart
+
+```mermaid
+graph TD
+    subgraph Model 1 Flow
+        A1[Start] --> B1[Load BART Model]
+        B1 --> C1[Input Text]
+        C1 --> D1{Text > 1024?}
+        D1 -->|Yes| E1[Split by Words]
+        D1 -->|No| F1[Summarize Directly]
+        E1 --> G1[Process Chunks]
+        G1 --> H1[Combine Results]
+        F1 --> I1[Display Summary]
+        H1 --> I1
+    end
+    
+    subgraph Model 2 Flow
+        A2[Start] --> B2[Load FLAN-T5]
+        B2 --> C2[Input Text + Settings]
+        C2 --> D2{Text > 1024?}
+        D2 -->|Yes| E2[Smart Paragraph Chunking]
+        D2 -->|No| F2[Process with Prompt]
+        E2 --> G2[Process with Progress]
+        G2 --> H2[Combine Structured Results]
+        F2 --> I2[Display Enhanced Output]
+        H2 --> I2
+        I2 --> J2[Export Options]
+    end
+    
+    style Model1 fill:#f9f,stroke:#333
+    style Model2 fill:#bbf,stroke:#333
