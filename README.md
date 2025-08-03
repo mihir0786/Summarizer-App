@@ -100,7 +100,7 @@ graph TD
 
 | Metric               | Model 1 | Model 2 | Improvement |
 |----------------------|---------|---------|-------------|
-| Processing Speed     | 12s     | 15s     | -3s         |
+| Processing Speed     | 25s     | 32s     | -7s (API Limitations)        |
 | Accuracy Score       | 82% (retains facts but misses nuances)     | 88% (better thematic depth + structured output)    | +6%         |
 | Long-text Handling   | Basic word-level chunking (breaks context)   | Paragraph-aware chunking (preserves flow) | Better chunking          |
 
